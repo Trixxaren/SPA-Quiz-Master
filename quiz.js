@@ -23,7 +23,6 @@ const categories = [
     { name: "Djur och Natur", description: "Frågor om djurarter, ekosystem, miljöfrågor och naturfenomen." }
 ];
 
-let currentCategory = ''; 
 let currentQuestions = []; 
 let currentQuestionIndex = 0; 
 let score = 0;
@@ -51,7 +50,6 @@ loadQuestions();
 
 // Startar quizet för en vald kategori
 const startQuiz = (category) => {
-    currentCategory = category;
     currentQuestions = questions[category]; // Hämtar frågor för vald kategori
     score = 0; 
     currentQuestionIndex = 0;
@@ -88,13 +86,11 @@ const showQuestion = () => {
         quizContainer.appendChild(document.createElement('br'));
     });
 
-    // Visa timer (nedräknare)
+
     const timerDisplay = document.createElement('div');
     timerDisplay.id = 'timer';
     timerDisplay.textContent = `Tid kvar: ${timeLeft} sek`;
     quizContainer.appendChild(timerDisplay);
-
-    // Starta timer
     startTimer(timerDisplay);
 
     const submitButton = document.createElement('button');
@@ -103,24 +99,23 @@ const showQuestion = () => {
     quizContainer.appendChild(submitButton);
 };
 
-// Starta nedräkningen
+
 const startTimer = (timerDisplay) => {
-    timeLeft = 10; // Nollställ timer vid varje fråga
+    timeLeft = 10; 
     timerInterval = setInterval(() => {
         timeLeft--;
         timerDisplay.textContent = `Tid kvar: ${timeLeft} sek`;
         if (timeLeft <= 0) {
-            clearInterval(timerInterval); // Stoppa timern
-            showNextQuestion(); // Visa nästa fråga när tiden är slut
+            clearInterval(timerInterval); 
+            showNextQuestion(); 
         }
     }, 1000);
 };
 
-// Visa nästa fråga när tiden är slut eller användaren svarar
-const showNextQuestion = () => {
+
+const showNextQuestion = () => { // Visa nästa fråga när tiden är slut eller användaren svarar
     const quizContainer = document.getElementById('quiz-container');
     
-    // Ta bort alternativ och timer
     const options = document.querySelectorAll('input[name="answer"]');
     options.forEach(option => option.disabled = true);
 
@@ -137,15 +132,14 @@ const showNextQuestion = () => {
 
     quizContainer.appendChild(feedback);
 
-    // Gå vidare till nästa fråga efter en liten fördröjning
+    
     setTimeout(() => {
         currentQuestionIndex++;
-        showQuestion(); // Nästa fråga
-        feedback.remove(); // Ta bort feedback
-    }, 2000); // Vänta 2 sekunder innan nästa fråga
+        showQuestion(); 
+        feedback.remove(); 
+    }, 2000); // 2sek innan nästa fråga
 };
 
-// Kontrollera om svaret är rätt
 const checkAnswer = () => {
     clearInterval(timerInterval); // Stoppa timern när användaren svarar
 
