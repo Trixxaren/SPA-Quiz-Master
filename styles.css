@@ -1,0 +1,188 @@
+/* Global Styling */
+
+h1 {
+    padding: 5px;
+    width: 1000px;
+    background-color: rgba(235, 149, 163, 0.645);
+    height: 40px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-shadow: 0 0 3px #8c737380;
+    box-shadow: 4px 4px 10px #000000;
+    margin: 10 auto; /* Centering the header */
+    text-shadow: 0 0 3px #ff000080;
+    box-shadow: 4px 4px 10px #000000;
+}
+
+/* Body styling */
+body {
+    place-items: center;
+    margin: 0;
+}
+
+/* Container for category boxes */
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-template-rows: repeat(3, 1fr);   /* Three rows */
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 10px; /* Adds spacing around the container */
+}
+
+/* Box styling for categories */
+.box {
+    position: relative;
+    color: rgba(0, 0, 0, 0.862);
+    margin: 10px;
+    padding: 60px;
+    height: 100px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease-out;
+    cursor: pointer;
+    font-size: 21px;
+    overflow: hidden;
+    text-shadow: 0 0 3px #ff000080;
+    box-shadow: 4px 4px 10px #000000;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* Hover effect */
+.box:hover {
+    opacity: 0.5;
+}
+
+/* Focus effect */
+.box:focus {
+    outline: 1px solid #000000;
+}
+
+/* Styling for individual boxes */
+#box-1::before { background-image: url('https://images.pexels.com/photos/73821/train-wreck-steam-locomotive-locomotive-railway-73821.jpeg'); }
+#box-2::before { background-image: url('https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg'); }
+#box-3::before { background-image: url('https://images.pexels.com/photos/163444/sport-treadmill-tor-route-163444.jpeg'); }
+#box-4::before { background-image: url('https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg'); }
+#box-5::before { background-image: url('https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2'); }
+#box-6::before { background-image: url('https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg'); }
+#box-7::before { background-image: url('https://images.pexels.com/photos/29626801/pexels-photo-29626801.jpeg'); }
+#box-8::before { background-image: url('https://images.pexels.com/photos/20793365/pexels-photo-20793365.jpeg'); }
+#box-9::before { background-image: url('https://images.pexels.com/photos/28913340/pexels-photo-28913340.jpeg'); }
+
+/* Styling for the quiz container */
+#quiz-container {
+    background-color: #b8b7b727;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for quiz heading */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: rgba(235, 149, 163, 0.645);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 0 0 3px #ff000080;
+    box-shadow: 4px 4px 10px #000000;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: rgba(239, 142, 159, 0.29);
+}
+
+/* Styling for labels */
+label {
+    display: block;
+    margin: 3px 0;
+}
+
+/* Feedback text styling */
+#feedback {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For small screens like smartphones */
+@media (max-width: 600px) {
+    h1 {
+        width: 90%; /* Make the header smaller */
+        font-size: 24px; /* Reduce font size */
+    }
+
+    #container {
+        grid-template-columns: 1fr; /* 1 column layout */
+        grid-template-rows: auto;  /* Auto-adjust rows */
+        padding: 5px; /* Less padding for smaller screens */
+    }
+
+    .box {
+        width: 100%; /* Box takes full width */
+        height: auto; /* Auto adjust height */
+        padding: 20px; /* Reduce padding */
+        font-size: 18px; /* Smaller font size */
+    }
+
+    button {
+        width: 100%; /* Make the button full width */
+        font-size: 16px; /* Reduce font size */
+    }
+}
+
+/* For tablets (between 600px and 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+    #container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+        grid-template-rows: repeat(5, 1fr);   /* Adjust rows */
+    }
+
+    .box {
+        width: 90%; /* Make boxes take up most of the width */
+        font-size: 19px; /* Adjust font size */
+    }
+
+    button {
+        width: auto; /* Keep button size fixed */
+        font-size: 17px;
+    }
+}
+/* For larger screens (desktops) */
+@media (min-width: 900px) {
+    #container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+    }
+
+    .box {
+        width: 300px; /* Reset box width to default */
+    }
+}
+
+
