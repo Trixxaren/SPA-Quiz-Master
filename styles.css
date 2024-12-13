@@ -1,5 +1,3 @@
-/* Global Styling */
-
 h1 {
     padding: 5px;
     width: 1000px;
@@ -10,28 +8,28 @@ h1 {
     border-radius: 10px;
     text-shadow: 0 0 3px #8c737380;
     box-shadow: 4px 4px 10px #000000;
-    margin: 10 auto; /* Centering the header */
+    margin: 10 auto; 
     text-shadow: 0 0 3px #ff000080;
     box-shadow: 4px 4px 10px #000000;
 }
 
-/* Body styling */
+
 body {
     place-items: center;
     margin: 0;
 }
 
-/* Container for category boxes */
+
 #container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
-    grid-template-rows: repeat(3, 1fr);   /* Three rows */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr);  
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    padding: 10px; /* Adds spacing around the container */
+    padding: 10px; 
 }
 
-/* Box styling for categories */
+
 .box {
     position: relative;
     color: rgba(0, 0, 0, 0.862);
@@ -63,17 +61,17 @@ body {
     z-index: -1;
 }
 
-/* Hover effect */
+
 .box:hover {
     opacity: 0.5;
 }
 
-/* Focus effect */
+
 .box:focus {
     outline: 1px solid #000000;
 }
 
-/* Styling for individual boxes */
+
 #box-1::before { background-image: url('https://images.pexels.com/photos/73821/train-wreck-steam-locomotive-locomotive-railway-73821.jpeg'); }
 #box-2::before { background-image: url('https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg'); }
 #box-3::before { background-image: url('https://images.pexels.com/photos/163444/sport-treadmill-tor-route-163444.jpeg'); }
@@ -84,7 +82,7 @@ body {
 #box-8::before { background-image: url('https://images.pexels.com/photos/20793365/pexels-photo-20793365.jpeg'); }
 #box-9::before { background-image: url('https://images.pexels.com/photos/28913340/pexels-photo-28913340.jpeg'); }
 
-/* Styling for the quiz container */
+
 #quiz-container {
     background-color: #b8b7b727;
     padding: 20px;
@@ -94,13 +92,13 @@ body {
     align-items: center;
 }
 
-/* Styling for quiz heading */
+
 h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Button styling */
+
 button {
     margin-top: 10px;
     padding: 10px 15px;
@@ -113,75 +111,74 @@ button {
     box-shadow: 4px 4px 10px #000000;
 }
 
-/* Button hover effect */
+
 button:hover {
     background-color: rgba(239, 142, 159, 0.29);
 }
 
-/* Styling for labels */
+
 label {
     display: block;
     margin: 3px 0;
 }
 
-/* Feedback text styling */
+
 #feedback {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* Media Queries for Responsiveness */
 
-/* For small screens like smartphones */
+/* smartphones */
 @media (max-width: 600px) {
     h1 {
-        width: 90%; /* Make the header smaller */
-        font-size: 24px; /* Reduce font size */
+        width: 90%; 
+        font-size: 24px; 
     }
 
     #container {
-        grid-template-columns: 1fr; /* 1 column layout */
-        grid-template-rows: auto;  /* Auto-adjust rows */
-        padding: 5px; /* Less padding for smaller screens */
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto; 
+        padding: 5px; 
     }
 
     .box {
-        width: 100%; /* Box takes full width */
-        height: auto; /* Auto adjust height */
-        padding: 20px; /* Reduce padding */
-        font-size: 18px; /* Smaller font size */
+        width: 100%; 
+        height: auto; 
+        padding: 20px; 
+        font-size: 18px; 
     }
 
     button {
-        width: 100%; /* Make the button full width */
-        font-size: 16px; /* Reduce font size */
+        width: 100%; 
+        font-size: 16px; 
     }
 }
 
-/* For tablets (between 600px and 900px) */
+/* Tablets */
 @media (min-width: 600px) and (max-width: 900px) {
     #container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
-        grid-template-rows: repeat(5, 1fr);   /* Adjust rows */
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(5, 1fr);   
     }
 
     .box {
-        width: 90%; /* Make boxes take up most of the width */
-        font-size: 19px; /* Adjust font size */
+        width: 90%; 
+        font-size: 19px; 
     }
 
     button {
-        width: auto; /* Keep button size fixed */
+        width: auto; 
         font-size: 17px;
     }
 }
-/* For larger screens (desktops) */
+/* Desktop */
 @media (min-width: 900px) {
     #container {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+        grid-template-columns: repeat(3, 1fr); 
     }
 
     .box {
-        width: 300px; /* Reset box width to default */
+        width: 300px; 
     }
 }
 
